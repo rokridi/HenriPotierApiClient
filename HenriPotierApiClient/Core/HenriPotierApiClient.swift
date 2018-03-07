@@ -53,11 +53,18 @@ public extension HenriPotierApiClient {
         return dataRequest.task
     }
     
-    @discardableResult public func offers(queue: DispatchQueue = DispatchQueue.main , completion: @escaping (Result<[Book]>) -> Void) -> URLSessionTask? {
-        let dataRequest = sessionManager.request(ApiRouter.books(baseURL))
+    /// Get offers for list of books (represented by their ISBNs).
+    ///
+    /// - Parameters:
+    ///   - ISBNs: ISBNs of the books.
+    ///   - queue: queue on which completion will be called when the task is finished.
+    ///   - completion: closure called when task is finished.
+    /// - Returns: URLSessionTask.
+    @discardableResult public func offers(ISBNs: [String], queue: DispatchQueue = DispatchQueue.main , completion: @escaping (Result<[Offer]>) -> Void) -> URLSessionTask? {
+        let dataRequest = sessionManager.request(ApiRouter.offers(ISBNs, baseURL))
             .validate()
             .validate(contentType: ["application/json"])
-            .responseArray(completionHandler: { (response:DataResponse<[HPApiBook]>) in
+            .responseArray(keyPath:"offers", completionHandler: { (response:DataResponse<[HPApiOffer]>) in
                 
                 switch response.result {
                 case .success(let apiBooks):
