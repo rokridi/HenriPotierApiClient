@@ -28,6 +28,12 @@
 		1EB9EEE8204FF25200DBA0AE /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB9EEE7204FF25200DBA0AE /* Result.swift */; };
 		4CBCA78010BEA077F781D9E4 /* Pods_HenriPotierApiClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B21AB3E156114AA82AC6527E /* Pods_HenriPotierApiClient.framework */; };
 		F0D6B185642FA56EF391BB99 /* Pods_HenriPotierApiClientTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED40484EFE1B90E36599DE57 /* Pods_HenriPotierApiClientTests.framework */; };
+		F4BDE1822050848100AD0F8A /* offers.json in Resources */ = {isa = PBXBuildFile; fileRef = F4BDE1812050848100AD0F8A /* offers.json */; };
+		F4BDE1842050859B00AD0F8A /* invalid_offers.json in Resources */ = {isa = PBXBuildFile; fileRef = F4BDE1832050859B00AD0F8A /* invalid_offers.json */; };
+		F4BDE186205085E200AD0F8A /* percentage_offer.json in Resources */ = {isa = PBXBuildFile; fileRef = F4BDE185205085E200AD0F8A /* percentage_offer.json */; };
+		F4BDE188205085FD00AD0F8A /* invalid_offer.json in Resources */ = {isa = PBXBuildFile; fileRef = F4BDE187205085FD00AD0F8A /* invalid_offer.json */; };
+		F4BDE18B2050943600AD0F8A /* minus_offer.json in Resources */ = {isa = PBXBuildFile; fileRef = F4BDE18920508B8800AD0F8A /* minus_offer.json */; };
+		F4BDE18C2050943B00AD0F8A /* slice_offer.json in Resources */ = {isa = PBXBuildFile; fileRef = F4BDE18A20508BA300AD0F8A /* slice_offer.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +75,12 @@
 		779D6FD233B1C0DE8C7633E2 /* Pods-HenriPotierApiClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HenriPotierApiClient.release.xcconfig"; path = "Pods/Target Support Files/Pods-HenriPotierApiClient/Pods-HenriPotierApiClient.release.xcconfig"; sourceTree = "<group>"; };
 		B21AB3E156114AA82AC6527E /* Pods_HenriPotierApiClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HenriPotierApiClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED40484EFE1B90E36599DE57 /* Pods_HenriPotierApiClientTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HenriPotierApiClientTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4BDE1812050848100AD0F8A /* offers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = offers.json; sourceTree = "<group>"; };
+		F4BDE1832050859B00AD0F8A /* invalid_offers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = invalid_offers.json; sourceTree = "<group>"; };
+		F4BDE185205085E200AD0F8A /* percentage_offer.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = percentage_offer.json; sourceTree = "<group>"; };
+		F4BDE187205085FD00AD0F8A /* invalid_offer.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = invalid_offer.json; sourceTree = "<group>"; };
+		F4BDE18920508B8800AD0F8A /* minus_offer.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = minus_offer.json; sourceTree = "<group>"; };
+		F4BDE18A20508BA300AD0F8A /* slice_offer.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = slice_offer.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +119,12 @@
 				1E4614B6204FFBFE00B03360 /* invalid_books.json */,
 				1E4614BA204FFF9900B03360 /* book.json */,
 				1E4614BC204FFFC300B03360 /* invalid_book.json */,
+				F4BDE1812050848100AD0F8A /* offers.json */,
+				F4BDE1832050859B00AD0F8A /* invalid_offers.json */,
+				F4BDE185205085E200AD0F8A /* percentage_offer.json */,
+				F4BDE18920508B8800AD0F8A /* minus_offer.json */,
+				F4BDE18A20508BA300AD0F8A /* slice_offer.json */,
+				F4BDE187205085FD00AD0F8A /* invalid_offer.json */,
 			);
 			path = Stubs;
 			sourceTree = "<group>";
@@ -313,8 +331,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				1E4614B7204FFBFE00B03360 /* invalid_books.json in Resources */,
+				F4BDE186205085E200AD0F8A /* percentage_offer.json in Resources */,
+				F4BDE188205085FD00AD0F8A /* invalid_offer.json in Resources */,
+				F4BDE18C2050943B00AD0F8A /* slice_offer.json in Resources */,
 				1E4614B5204FFBD900B03360 /* books.json in Resources */,
+				F4BDE18B2050943600AD0F8A /* minus_offer.json in Resources */,
+				F4BDE1822050848100AD0F8A /* offers.json in Resources */,
 				1E4614BD204FFFC400B03360 /* invalid_book.json in Resources */,
+				F4BDE1842050859B00AD0F8A /* invalid_offers.json in Resources */,
 				1E4614BB204FFF9900B03360 /* book.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

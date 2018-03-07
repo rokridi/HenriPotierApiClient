@@ -17,8 +17,8 @@ struct HPApiOffer: ImmutableMappable {
     
     init(map: Map) throws {
         type = try map.value("type", using: EnumTransform<Offer.OfferType>())
-        value = try map.value("title")
-        sliceValue = try map.value("sliceValue")
+        value = try map.value("value")
+        sliceValue = try? map.value("sliceValue")
     }
 }
 

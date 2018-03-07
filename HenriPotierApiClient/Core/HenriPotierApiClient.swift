@@ -64,7 +64,7 @@ public extension HenriPotierApiClient {
         let dataRequest = sessionManager.request(ApiRouter.offers(ISBNs, baseURL))
             .validate()
             .validate(contentType: ["application/json"])
-            .responseArray(completionHandler: { (response:DataResponse<[HPApiOffer]>) in
+            .responseArray(keyPath:"offers", completionHandler: { (response:DataResponse<[HPApiOffer]>) in
                 
                 switch response.result {
                 case .success(let apiBooks):

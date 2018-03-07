@@ -76,5 +76,78 @@ class ModelsTests: QuickSpec {
                 expect(book.cover).to(equal("http://henri-potier.xebia.fr/hp5.jpg"))
             })
         }
+        
+        describe("HPApiOffer") {
+            
+            context("when JSON is valid", {
+                it("should be a percentage offer", closure: {
+                    let mapper = Mapper<HPApiOffer>()
+                    let json = Helpers.JSONFromFile("percentage_offer")
+                    
+                    let apiOffer = try? mapper.map(JSONObject: json as Any)
+                    
+                    expect(apiOffer).toNot(beNil())
+                    
+                    if let apiOffer = apiOffer {
+                        expect(apiOffer.type).to(equal(Offer.OfferType.percentage))
+                        expect(apiOffer.value).to(equal(4))
+                        expect(apiOffer.sliceValue).to(beNil())
+                        
+                        let offer = apiOffer.model
+                        expect(offer.type).to(equal(Offer.OfferType.percentage))
+                        expect(offer.value).to(equal(4))
+                        expect(offer.sliceValue).to(beNil())
+                    }
+                })
+                
+                it("should be a minus offer", closure: {
+                    let mapper = Mapper<HPApiOffer>()
+                    let json = Helpers.JSONFromFile("minus_offer")
+                    let apiOffer = try? mapper.map(JSONObject: json as Any)
+                    
+                    expect(apiOffer).toNot(beNil())
+                    
+                    if let apiOffer = apiOffer {
+                        expect(apiOffer.type).to(equal(Offer.OfferType.minus))
+                        expect(apiOffer.value).to(equal(15))
+                        expect(apiOffer.sliceValue).to(beNil())
+                        
+                        let offer = apiOffer.model
+                        expect(offer.type).to(equal(Offer.OfferType.minus))
+                        expect(offer.value).to(equal(15))
+                        expect(offer.sliceValue).to(beNil())
+                    }
+                })
+                
+                it("should be a slice offer", closure: {
+                    let mapper = Mapper<HPApiOffer>()
+                    let json = Helpers.JSONFromFile("slice_offer")
+                    let apiOffer = try? mapper.map(JSONObject: json as Any)
+                    
+                    expect(apiOffer).toNot(beNil())
+                    
+                    if let apiOffer = apiOffer {
+                        expect(apiOffer.type).to(equal(Offer.OfferType.slice))
+                        expect(apiOffer.value).to(equal(12))
+                        expect(apiOffer.sliceValue).to(equal(100))
+                        
+                        let offer = apiOffer.model
+                        expect(offer.type).to(equal(Offer.OfferType.slice))
+                        expect(offer.value).to(equal(12))
+                        expect(offer.sliceValue).to(equal(100))
+                    }
+                })
+            })
+            
+            context("when JSON is not valid", {
+                it("should be a non valid HPApiOffer", closure: {
+                    let mapper = Mapper<HPApiOffer>()
+                    let json = Helpers.JSONFromFile("invalid_offer")
+                    let apiOffer = try? mapper.map(JSONObject: json as Any)
+                    
+                    expect(apiOffer).to(beNil())
+                })
+            })
+        }
     }
 }
