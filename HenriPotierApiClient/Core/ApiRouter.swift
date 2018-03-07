@@ -12,10 +12,13 @@ import Alamofire
 enum ApiRouter: URLRequestConvertible {
     
     case books(String)
+    case offers([String], String)
     
     private var baseURL: String {
         switch self {
         case .books(let baseURL):
+            return baseURL
+        case .offers(_, let baseURL):
             return baseURL
         }
     }
@@ -24,12 +27,16 @@ enum ApiRouter: URLRequestConvertible {
         switch self {
         case .books(_):
             return "books"
+        case .offers(let ISBNs, _):
+            return ISBNs.joined(separator: ",") + "/commercialOffers"
         }
     }
     
     var method: Alamofire.HTTPMethod {
         switch self {
         case .books(_):
+            return .get
+        case .offers(_, _):
             return .get
         }
     }
