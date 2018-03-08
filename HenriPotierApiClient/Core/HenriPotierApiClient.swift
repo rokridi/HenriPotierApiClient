@@ -10,6 +10,7 @@ import Foundation
 import Alamofire
 import AlamofireObjectMapper
 
+/// Class for managing Henri Potier Api calls.
 public class HenriPotierApiClient {
     
     private let baseURL: String

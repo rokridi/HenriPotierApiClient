@@ -9,6 +9,7 @@
 import Foundation
 import ObjectMapper
 
+/// Represents an offer API model.
 struct HPApiOffer: ImmutableMappable {
     
     let type: Offer.OfferType

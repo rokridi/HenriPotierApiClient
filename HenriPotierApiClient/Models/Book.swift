@@ -12,17 +12,17 @@ import Foundation
 public struct Book {
     
     ///ISBN of the book.
-    let isbn: String
+    public let isbn: String
     
     /// Title of the book.
-    let title: String
+    public let title: String
     
     /// Price of the book.
-    let price: Int
+    public let price: Int
     
     /// Book's cover URL.
-    let cover: String
+    public let cover: String
     
     /// Synopsis of the book.
-    let synopsis: [String]
+    public let synopsis: [String]
 }
