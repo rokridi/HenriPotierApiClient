@@ -1,5 +1,7 @@
 # HenriPotierApiClient
 
+Look at [reference](https://rokridi.github.io/HenriPotierApiClient/) for more details.
+
 ## Features
 
 * Fetch Henri Potier books.
