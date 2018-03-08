@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// This protocol should be implemented by models representing JSON models.
 protocol Modelable {
     
     associatedtype Model

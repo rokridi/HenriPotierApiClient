@@ -24,11 +24,11 @@ public struct Offer {
     }
     
     /// Type of the offer.
-    let type: OfferType
+    public let type: OfferType
     
     /// value of the offer.
-    let value: Int
+    public let value: Int
     
     /// slice value.
-    let sliceValue: Int?
+    public let sliceValue: Int?
 }
