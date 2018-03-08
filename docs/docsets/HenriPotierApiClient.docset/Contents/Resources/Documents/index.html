@@ -75,15 +75,59 @@
           <section class="section">
             
             <h1 id='henripotierapiclient' class='heading'>HenriPotierApiClient</h1>
-<h3 id='a-http-client-for-consuming-henri-potier-api' class='heading'>A HTTP client for consuming Henri Potier API.</h3>
+<h2 id='features' class='heading'>Features</h2>
 
-<p>A network utility for consuming Henri Potier API.</p>
-<h3 id='installation' class='heading'>Installation</h3>
-<pre class="highlight ruby"><code><span class="n">pod</span> <span class="s1">'HenriPotierApiClient'</span>
+<ul>
+<li>Fetch Henri Potier books.</li>
+<li>Get offers for books.</li>
+</ul>
+<h2 id='requirements' class='heading'>Requirements</h2>
+
+<ul>
+<li>iOS 11.0+</li>
+<li>XCode 9+</li>
+<li>Swift 4.0+</li>
+</ul>
+<h2 id='installation' class='heading'>Installation</h2>
+<h3 id='cocoapods' class='heading'>CocoaPods</h3>
+
+<p><a href="http://cocoapods.org/">CocoaPods</a> is a dependency manager for Cocoa projects. You can install it with the following command:</p>
+<pre class="highlight plaintext"><code>$ gem install cocoapods
 </code></pre>
-<h3 id='authors' class='heading'>Authors</h3>
 
-<p>Mohamed Aymen Landolsi</p>
+<p>To integrate BantuDicoAlamofireApiClient into your Xcode project using CocoaPods, specify it in your <code>Podfile</code>:</p>
+<pre class="highlight plaintext"><code>platform :ios, '10.0'
+use_frameworks!
+
+target '&lt;Your Target Name&gt;' do
+    pod 'HenriPotierApiClient', :git=&gt; 'https://github.com/rokridi/HenriPotierApiClient.git'
+end
+</code></pre>
+
+<p>Then, run the following command:</p>
+<pre class="highlight plaintext"><code>$ pod install
+</code></pre>
+<h2 id='usage' class='heading'>Usage</h2>
+<h3 id='fetch-books' class='heading'>Fetch books.</h3>
+<pre class="highlight plaintext"><code>let client = HenriPotierApiClient(configuration: URLSessionConfiguration.default, baseURL: "http://www.domain.com")
+
+client.books() { result  in
+  switch result {
+    case .success(let books):
+    case .failure(let error):
+  }
+}
+</code></pre>
+<h3 id='get-offers-for-books-isbns' class='heading'>Get offers for books ISBNs.</h3>
+<pre class="highlight plaintext"><code>let client = HenriPotierApiClient(configuration: URLSessionConfiguration.default, baseURL: "http://www.domain.com")
+
+apiClient.offers(ISBNs: ["c8fabf68-8374-48fe-a7ea-a00ccd07afff", "a460afed-e5e7-4e39-a39d-c885c05db861"]) { result  in
+  switch result {
+    case .success(let offers):
+    case .failure(let error):
+  }
+}                    
+</code></pre>
 
           </section>
         </section>
