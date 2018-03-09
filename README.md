@@ -25,7 +25,7 @@ $ gem install cocoapods
 To integrate BantuDicoAlamofireApiClient into your Xcode project using CocoaPods, specify it in your ```Podfile```:
 
 ```
-platform :ios, '10.0'
+platform :ios, '11.0'
 use_frameworks!
 
 target '<Your Target Name>' do
