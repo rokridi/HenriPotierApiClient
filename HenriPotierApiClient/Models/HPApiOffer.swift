@@ -8,7 +8,7 @@
 
 import Foundation
 
-/// Represents an offer.
+/// Represents an Henri Potier offer.
 public struct HPApiOffer {
     
     /// Represents an offer type
