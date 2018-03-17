@@ -15,12 +15,12 @@
 		1E4614BB204FFF9900B03360 /* book.json in Resources */ = {isa = PBXBuildFile; fileRef = 1E4614BA204FFF9900B03360 /* book.json */; };
 		1E4614BD204FFFC400B03360 /* invalid_book.json in Resources */ = {isa = PBXBuildFile; fileRef = 1E4614BC204FFFC300B03360 /* invalid_book.json */; };
 		1E4614BF205026BF00B03360 /* ApiRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4614BE205026BF00B03360 /* ApiRequestTests.swift */; };
-		1E4614C120504A3C00B03360 /* HPApiOffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4614C020504A3C00B03360 /* HPApiOffer.swift */; };
-		1E4614C320504A4500B03360 /* Offer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4614C220504A4500B03360 /* Offer.swift */; };
+		1E4614C120504A3C00B03360 /* Offer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4614C020504A3C00B03360 /* Offer.swift */; };
+		1E4614C320504A4500B03360 /* HPApiOffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4614C220504A4500B03360 /* HPApiOffer.swift */; };
 		1EB9EEC8204FDE1A00DBA0AE /* HenriPotierApiClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EB9EEBE204FDE1A00DBA0AE /* HenriPotierApiClient.framework */; };
 		1EB9EECF204FDE1A00DBA0AE /* HenriPotierApiClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EB9EEC1204FDE1A00DBA0AE /* HenriPotierApiClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1EB9EEDB204FE3EE00DBA0AE /* HPApiBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB9EEDA204FE3EE00DBA0AE /* HPApiBook.swift */; };
-		1EB9EEDD204FE65800DBA0AE /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB9EEDC204FE65800DBA0AE /* Book.swift */; };
+		1EB9EEDB204FE3EE00DBA0AE /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB9EEDA204FE3EE00DBA0AE /* Book.swift */; };
+		1EB9EEDD204FE65800DBA0AE /* HPApiBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB9EEDC204FE65800DBA0AE /* HPApiBook.swift */; };
 		1EB9EEE0204FE6CE00DBA0AE /* Modelable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB9EEDF204FE6CE00DBA0AE /* Modelable.swift */; };
 		1EB9EEE2204FEB2D00DBA0AE /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB9EEE1204FEB2D00DBA0AE /* ApiError.swift */; };
 		1EB9EEE4204FEFAA00DBA0AE /* HenriPotierApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB9EEE3204FEFAA00DBA0AE /* HenriPotierApiClient.swift */; };
@@ -55,15 +55,15 @@
 		1E4614BA204FFF9900B03360 /* book.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = book.json; sourceTree = "<group>"; };
 		1E4614BC204FFFC300B03360 /* invalid_book.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = invalid_book.json; sourceTree = "<group>"; };
 		1E4614BE205026BF00B03360 /* ApiRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequestTests.swift; sourceTree = "<group>"; };
-		1E4614C020504A3C00B03360 /* HPApiOffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPApiOffer.swift; sourceTree = "<group>"; };
-		1E4614C220504A4500B03360 /* Offer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Offer.swift; sourceTree = "<group>"; };
+		1E4614C020504A3C00B03360 /* Offer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Offer.swift; sourceTree = "<group>"; };
+		1E4614C220504A4500B03360 /* HPApiOffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPApiOffer.swift; sourceTree = "<group>"; };
 		1EB9EEBE204FDE1A00DBA0AE /* HenriPotierApiClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HenriPotierApiClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EB9EEC1204FDE1A00DBA0AE /* HenriPotierApiClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HenriPotierApiClient.h; sourceTree = "<group>"; };
 		1EB9EEC2204FDE1A00DBA0AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1EB9EEC7204FDE1A00DBA0AE /* HenriPotierApiClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HenriPotierApiClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EB9EECE204FDE1A00DBA0AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1EB9EEDA204FE3EE00DBA0AE /* HPApiBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPApiBook.swift; sourceTree = "<group>"; };
-		1EB9EEDC204FE65800DBA0AE /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		1EB9EEDA204FE3EE00DBA0AE /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		1EB9EEDC204FE65800DBA0AE /* HPApiBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPApiBook.swift; sourceTree = "<group>"; };
 		1EB9EEDF204FE6CE00DBA0AE /* Modelable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modelable.swift; sourceTree = "<group>"; };
 		1EB9EEE1204FEB2D00DBA0AE /* ApiError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
 		1EB9EEE3204FEFAA00DBA0AE /* HenriPotierApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HenriPotierApiClient.swift; sourceTree = "<group>"; };
@@ -177,10 +177,10 @@
 		1EB9EED8204FE3A200DBA0AE /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				1EB9EEDA204FE3EE00DBA0AE /* HPApiBook.swift */,
-				1EB9EEDC204FE65800DBA0AE /* Book.swift */,
-				1E4614C020504A3C00B03360 /* HPApiOffer.swift */,
-				1E4614C220504A4500B03360 /* Offer.swift */,
+				1EB9EEDA204FE3EE00DBA0AE /* Book.swift */,
+				1EB9EEDC204FE65800DBA0AE /* HPApiBook.swift */,
+				1E4614C020504A3C00B03360 /* Offer.swift */,
+				1E4614C220504A4500B03360 /* HPApiOffer.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -389,6 +389,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -398,6 +399,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -447,15 +449,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1EB9EEDB204FE3EE00DBA0AE /* HPApiBook.swift in Sources */,
+				1EB9EEDB204FE3EE00DBA0AE /* Book.swift in Sources */,
 				1EB9EEE2204FEB2D00DBA0AE /* ApiError.swift in Sources */,
 				1EB9EEE0204FE6CE00DBA0AE /* Modelable.swift in Sources */,
-				1EB9EEDD204FE65800DBA0AE /* Book.swift in Sources */,
-				1E4614C320504A4500B03360 /* Offer.swift in Sources */,
+				1EB9EEDD204FE65800DBA0AE /* HPApiBook.swift in Sources */,
+				1E4614C320504A4500B03360 /* HPApiOffer.swift in Sources */,
 				1EB9EEE8204FF25200DBA0AE /* Result.swift in Sources */,
 				1EB9EEE6204FEFC600DBA0AE /* ApiRouter.swift in Sources */,
 				1EB9EEE4204FEFAA00DBA0AE /* HenriPotierApiClient.swift in Sources */,
-				1E4614C120504A3C00B03360 /* HPApiOffer.swift in Sources */,
+				1E4614C120504A3C00B03360 /* Offer.swift in Sources */,
 				1E4614B0204FF63500B03360 /* AFError+ApiError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

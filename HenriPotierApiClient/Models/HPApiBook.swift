@@ -7,40 +7,22 @@
 //
 
 import Foundation
-import ObjectMapper
 
-/// Api book model.
-struct HPApiBook: ImmutableMappable {
+/// Represents a book model.
+public struct HPApiBook {
     
     ///ISBN of the book.
-    let isbn: String
+    public let isbn: String
     
     /// Title of the book.
-    let title: String
+    public let title: String
     
     /// Price of the book.
-    let price: Int
+    public let price: Int
     
     /// Book's cover URL.
-    let cover: String
+    public let cover: String
     
     /// Synopsis of the book.
-    let synopsis: [String]
-    
-    init(map: Map) throws {
-        isbn = try map.value("isbn")
-        title = try map.value("title")
-        price = try map.value("price")
-        cover = try map.value("cover")
-        synopsis = try map.value("synopsis")
-    }
-}
-
-extension HPApiBook: Modelable {
-    
-    typealias Model = Book
-    
-    var model: Book {
-        return Book(isbn: isbn, title: title, price: price, cover: cover, synopsis: synopsis)
-    }
+    public let synopsis: [String]
 }

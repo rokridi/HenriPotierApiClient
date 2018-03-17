@@ -91,5 +91,6 @@ Pod::Spec.new do |s|
 
   s.dependency "Alamofire", "~> 4.7"
   s.dependency "AlamofireObjectMapper", "~> 5.0"
+  s.dependency "RxSwift", "~> 4.0"
 
 end
