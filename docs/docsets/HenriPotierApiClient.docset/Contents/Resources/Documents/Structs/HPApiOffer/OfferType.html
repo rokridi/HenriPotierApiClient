@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>ParameterEncodingFailureReason Enumeration Reference</title>
+    <title>OfferType Enumeration Reference</title>
     <link rel="stylesheet" type="text/css" href="../../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Enum/ParameterEncodingFailureReason" class="dashAnchor"></a>
-    <a title="ParameterEncodingFailureReason Enumeration Reference"></a>
+    <a name="//apple_ref/swift/Enum/OfferType" class="dashAnchor"></a>
+    <a title="OfferType Enumeration Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../../index.html">HenriPotierApiClient Docs</a> (61% documented)</p>
@@ -21,7 +21,7 @@
       <p id="breadcrumbs">
         <a href="../../index.html">HenriPotierApiClient Reference</a>
         <img id="carat" src="../../img/carat.png" />
-        ParameterEncodingFailureReason Enumeration Reference
+        OfferType Enumeration Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -74,19 +74,19 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>ParameterEncodingFailureReason</h1>
+            <h1>OfferType</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">ParameterEncodingFailureReason</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">OfferType</span><span class="p">:</span> <span class="kt">String</span></code></pre>
 
                 </div>
               </div>
-            <p>The underlying reason the parameter encoding error occurred.</p>
+            <p>Represents an offer type</p>
 
 <ul>
-<li>missingURL:                 The URL request did not have a URL to encode.</li>
-<li>jsonEncodingFailed:         JSON serialization failed with an underlying system error during the encoding process.</li>
-<li>unknownReason:              The failure reason is unknown.</li>
+<li>percentage: type of the offer is percentage.</li>
+<li>minus: type of the offer is minus.</li>
+<li>slice: slice value.</li>
 </ul>
 
           </section>
@@ -96,9 +96,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:20HenriPotierApiClient0C5ErrorO30ParameterEncodingFailureReasonO10missingURLA2EmF"></a>
-                    <a name="//apple_ref/swift/Element/missingURL" class="dashAnchor"></a>
-                    <a class="token" href="#/s:20HenriPotierApiClient0C5ErrorO30ParameterEncodingFailureReasonO10missingURLA2EmF">missingURL</a>
+                    <a name="/s:20HenriPotierApiClient10HPApiOfferV0F4TypeO10percentageA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/percentage" class="dashAnchor"></a>
+                    <a class="token" href="#/s:20HenriPotierApiClient10HPApiOfferV0F4TypeO10percentageA2EmF">percentage</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -113,7 +113,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">missingURL</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">percentage</span> <span class="o">=</span> <span class="s">"percentage"</span></code></pre>
 
                         </div>
                       </div>
@@ -127,9 +127,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:20HenriPotierApiClient0C5ErrorO30ParameterEncodingFailureReasonO04jsonG6FailedAEs0E0_p5error_tcAEmF"></a>
-                    <a name="//apple_ref/swift/Element/jsonEncodingFailed" class="dashAnchor"></a>
-                    <a class="token" href="#/s:20HenriPotierApiClient0C5ErrorO30ParameterEncodingFailureReasonO04jsonG6FailedAEs0E0_p5error_tcAEmF">jsonEncodingFailed</a>
+                    <a name="/s:20HenriPotierApiClient10HPApiOfferV0F4TypeO5minusA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/minus" class="dashAnchor"></a>
+                    <a class="token" href="#/s:20HenriPotierApiClient10HPApiOfferV0F4TypeO5minusA2EmF">minus</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -144,7 +144,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">jsonEncodingFailed</span><span class="p">(</span><span class="nv">error</span><span class="p">:</span> <span class="kt">Error</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">minus</span> <span class="o">=</span> <span class="s">"minus"</span></code></pre>
 
                         </div>
                       </div>
@@ -158,9 +158,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:20HenriPotierApiClient0C5ErrorO30ParameterEncodingFailureReasonO07unknownI0A2EmF"></a>
-                    <a name="//apple_ref/swift/Element/unknownReason" class="dashAnchor"></a>
-                    <a class="token" href="#/s:20HenriPotierApiClient0C5ErrorO30ParameterEncodingFailureReasonO07unknownI0A2EmF">unknownReason</a>
+                    <a name="/s:20HenriPotierApiClient10HPApiOfferV0F4TypeO5sliceA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/slice" class="dashAnchor"></a>
+                    <a class="token" href="#/s:20HenriPotierApiClient10HPApiOfferV0F4TypeO5sliceA2EmF">slice</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -175,38 +175,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">unknownReason</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:20HenriPotierApiClient0C5ErrorO30ParameterEncodingFailureReasonO010underlyingE0s0E0_pSgv"></a>
-                    <a name="//apple_ref/swift/Property/underlyingError" class="dashAnchor"></a>
-                    <a class="token" href="#/s:20HenriPotierApiClient0C5ErrorO30ParameterEncodingFailureReasonO010underlyingE0s0E0_pSgv">underlyingError</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">underlyingError</span><span class="p">:</span> <span class="kt">Error</span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">slice</span> <span class="o">=</span> <span class="s">"slice"</span></code></pre>
 
                         </div>
                       </div>

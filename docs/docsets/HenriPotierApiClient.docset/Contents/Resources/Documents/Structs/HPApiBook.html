@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>HenriPotierApiClient Class Reference</title>
+    <title>HPApiBook Structure Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Class/HenriPotierApiClient" class="dashAnchor"></a>
-    <a title="HenriPotierApiClient Class Reference"></a>
+    <a name="//apple_ref/swift/Struct/HPApiBook" class="dashAnchor"></a>
+    <a title="HPApiBook Structure Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html">HenriPotierApiClient Docs</a> (61% documented)</p>
@@ -21,7 +21,7 @@
       <p id="breadcrumbs">
         <a href="../index.html">HenriPotierApiClient Reference</a>
         <img id="carat" src="../img/carat.png" />
-        HenriPotierApiClient Class Reference
+        HPApiBook Structure Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -74,14 +74,14 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>HenriPotierApiClient</h1>
+            <h1>HPApiBook</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">HenriPotierApiClient</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">HPApiBook</span></code></pre>
 
                 </div>
               </div>
-            <p>Class for managing Henri Potier Api calls.</p>
+            <p>Represents a book model.</p>
 
           </section>
           <section class="section task-group-section">
@@ -90,9 +90,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:20HenriPotierApiClientAACABSo23URLSessionConfigurationC13configuration_SS7baseURLtcfc"></a>
-                    <a name="//apple_ref/swift/Method/init(configuration:baseURL:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:20HenriPotierApiClientAACABSo23URLSessionConfigurationC13configuration_SS7baseURLtcfc">init(configuration:baseURL:)</a>
+                    <a name="/s:20HenriPotierApiClient9HPApiBookV4isbnSSv"></a>
+                    <a name="//apple_ref/swift/Property/isbn" class="dashAnchor"></a>
+                    <a class="token" href="#/s:20HenriPotierApiClient9HPApiBookV4isbnSSv">isbn</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -100,82 +100,16 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Create a HenriPotierApiClient instance.</p>
+                        <p>ISBN of the book.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">configuration</span><span class="p">:</span> <span class="kt">URLSessionConfiguration</span> <span class="o">=</span> <span class="kt">URLSessionConfiguration</span><span class="o">.</span><span class="k">default</span><span class="p">,</span> <span class="nv">baseURL</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">isbn</span><span class="p">:</span> <span class="kt">String</span></code></pre>
 
                         </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>configuration</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>URLSessionConfiguration. Default value is URLSessionConfiguration.default.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>baseURL</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>the base URL of the remote server.</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:20HenriPotierApiClientAAC5booksXeXeF"></a>
-                    <a name="//apple_ref/swift/Method/books()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:20HenriPotierApiClientAAC5booksXeXeF">books()</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Get books.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@discardableResult</span> <span class="kd">public</span> <span class="kd">func</span> <span class="nf">books</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Observable</span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Structs/HPApiBook.html">HPApiBook</a></span><span class="p">]</span><span class="o">&gt;</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>Observable&lt;[HPApiBook]&gt;.</p>
                       </div>
                     </section>
                   </div>
@@ -183,9 +117,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:20HenriPotierApiClientAAC6offersXeXeF"></a>
-                    <a name="//apple_ref/swift/Method/offers(ISBNs:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:20HenriPotierApiClientAAC6offersXeXeF">offers(ISBNs:)</a>
+                    <a name="/s:20HenriPotierApiClient9HPApiBookV5titleSSv"></a>
+                    <a name="//apple_ref/swift/Property/title" class="dashAnchor"></a>
+                    <a class="token" href="#/s:20HenriPotierApiClient9HPApiBookV5titleSSv">title</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -193,39 +127,97 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Get offers for list of books (represented by their ISBNs).</p>
+                        <p>Title of the book.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@discardableResult</span> <span class="kd">public</span> <span class="kd">func</span> <span class="nf">offers</span><span class="p">(</span><span class="kt">ISBNs</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt">Observable</span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Structs/HPApiOffer.html">HPApiOffer</a></span><span class="p">]</span><span class="o">&gt;</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">title</span><span class="p">:</span> <span class="kt">String</span></code></pre>
 
                         </div>
                       </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>ISBNs</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>ISBNs of the books.</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:20HenriPotierApiClient9HPApiBookV5priceSiv"></a>
+                    <a name="//apple_ref/swift/Property/price" class="dashAnchor"></a>
+                    <a class="token" href="#/s:20HenriPotierApiClient9HPApiBookV5priceSiv">price</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Price of the book.</p>
+
                       </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>Observable&lt;[HPApiOffer]&gt;.</p>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">price</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:20HenriPotierApiClient9HPApiBookV5coverSSv"></a>
+                    <a name="//apple_ref/swift/Property/cover" class="dashAnchor"></a>
+                    <a class="token" href="#/s:20HenriPotierApiClient9HPApiBookV5coverSSv">cover</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Book&rsquo;s cover URL.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">cover</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:20HenriPotierApiClient9HPApiBookV8synopsisSaySSGv"></a>
+                    <a name="//apple_ref/swift/Property/synopsis" class="dashAnchor"></a>
+                    <a class="token" href="#/s:20HenriPotierApiClient9HPApiBookV8synopsisSaySSGv">synopsis</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Synopsis of the book.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">synopsis</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
