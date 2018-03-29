@@ -26,8 +26,6 @@
 		1EB9EEE4204FEFAA00DBA0AE /* HenriPotierApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB9EEE3204FEFAA00DBA0AE /* HenriPotierApiClient.swift */; };
 		1EB9EEE6204FEFC600DBA0AE /* ApiRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB9EEE5204FEFC600DBA0AE /* ApiRouter.swift */; };
 		1EB9EEE8204FF25200DBA0AE /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB9EEE7204FF25200DBA0AE /* Result.swift */; };
-		7EC448DEF0EA94EF986E6D23 /* Pods_HenriPotierApiClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A59FC09721AFF5E8C0981A4B /* Pods_HenriPotierApiClient.framework */; };
-		E8B88778497FAB2F8FCD359F /* Pods_HenriPotierApiClientTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7990DB3B2CDBBBDFCD59C13D /* Pods_HenriPotierApiClientTests.framework */; };
 		F4BDE1822050848100AD0F8A /* offers.json in Resources */ = {isa = PBXBuildFile; fileRef = F4BDE1812050848100AD0F8A /* offers.json */; };
 		F4BDE1842050859B00AD0F8A /* invalid_offers.json in Resources */ = {isa = PBXBuildFile; fileRef = F4BDE1832050859B00AD0F8A /* invalid_offers.json */; };
 		F4BDE186205085E200AD0F8A /* percentage_offer.json in Resources */ = {isa = PBXBuildFile; fileRef = F4BDE185205085E200AD0F8A /* percentage_offer.json */; };
@@ -69,12 +67,6 @@
 		1EB9EEE3204FEFAA00DBA0AE /* HenriPotierApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HenriPotierApiClient.swift; sourceTree = "<group>"; };
 		1EB9EEE5204FEFC600DBA0AE /* ApiRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiRouter.swift; sourceTree = "<group>"; };
 		1EB9EEE7204FF25200DBA0AE /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
-		604F4671E61FC302843EFAD7 /* Pods-HenriPotierApiClientTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HenriPotierApiClientTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HenriPotierApiClientTests/Pods-HenriPotierApiClientTests.debug.xcconfig"; sourceTree = "<group>"; };
-		7990DB3B2CDBBBDFCD59C13D /* Pods_HenriPotierApiClientTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HenriPotierApiClientTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8A2915AC10FB5EE13D05D9A4 /* Pods-HenriPotierApiClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HenriPotierApiClient.release.xcconfig"; path = "Pods/Target Support Files/Pods-HenriPotierApiClient/Pods-HenriPotierApiClient.release.xcconfig"; sourceTree = "<group>"; };
-		A59FC09721AFF5E8C0981A4B /* Pods_HenriPotierApiClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HenriPotierApiClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AA07E5C6052FDADE75E9DCBA /* Pods-HenriPotierApiClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HenriPotierApiClient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HenriPotierApiClient/Pods-HenriPotierApiClient.debug.xcconfig"; sourceTree = "<group>"; };
-		B72DC33B31C3776E6DC34C8A /* Pods-HenriPotierApiClientTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HenriPotierApiClientTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HenriPotierApiClientTests/Pods-HenriPotierApiClientTests.release.xcconfig"; sourceTree = "<group>"; };
 		F4BDE1812050848100AD0F8A /* offers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = offers.json; sourceTree = "<group>"; };
 		F4BDE1832050859B00AD0F8A /* invalid_offers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = invalid_offers.json; sourceTree = "<group>"; };
 		F4BDE185205085E200AD0F8A /* percentage_offer.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = percentage_offer.json; sourceTree = "<group>"; };
@@ -88,7 +80,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7EC448DEF0EA94EF986E6D23 /* Pods_HenriPotierApiClient.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,7 +88,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1EB9EEC8204FDE1A00DBA0AE /* HenriPotierApiClient.framework in Frameworks */,
-				E8B88778497FAB2F8FCD359F /* Pods_HenriPotierApiClientTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,8 +125,6 @@
 				1EB9EEC0204FDE1A00DBA0AE /* HenriPotierApiClient */,
 				1EB9EECB204FDE1A00DBA0AE /* HenriPotierApiClientTests */,
 				1EB9EEBF204FDE1A00DBA0AE /* Products */,
-				F19F42FDD0E44B71E356F5E8 /* Pods */,
-				A53B7BFA43880E7F68791538 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -204,26 +192,6 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
-		A53B7BFA43880E7F68791538 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				A59FC09721AFF5E8C0981A4B /* Pods_HenriPotierApiClient.framework */,
-				7990DB3B2CDBBBDFCD59C13D /* Pods_HenriPotierApiClientTests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		F19F42FDD0E44B71E356F5E8 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				AA07E5C6052FDADE75E9DCBA /* Pods-HenriPotierApiClient.debug.xcconfig */,
-				8A2915AC10FB5EE13D05D9A4 /* Pods-HenriPotierApiClient.release.xcconfig */,
-				604F4671E61FC302843EFAD7 /* Pods-HenriPotierApiClientTests.debug.xcconfig */,
-				B72DC33B31C3776E6DC34C8A /* Pods-HenriPotierApiClientTests.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -242,12 +210,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1EB9EED2204FDE1A00DBA0AE /* Build configuration list for PBXNativeTarget "HenriPotierApiClient" */;
 			buildPhases = (
-				9B3B1BC491D6BCECFA100094 /* [CP] Check Pods Manifest.lock */,
 				1EB9EEB9204FDE1A00DBA0AE /* Sources */,
 				1EB9EEBA204FDE1A00DBA0AE /* Frameworks */,
 				1EB9EEBB204FDE1A00DBA0AE /* Headers */,
 				1EB9EEBC204FDE1A00DBA0AE /* Resources */,
-				2B59B78AFF9CB32F60A9F52B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -262,12 +228,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1EB9EED5204FDE1A00DBA0AE /* Build configuration list for PBXNativeTarget "HenriPotierApiClientTests" */;
 			buildPhases = (
-				7459EF3F5545AC85C7F648C4 /* [CP] Check Pods Manifest.lock */,
 				1EB9EEC3204FDE1A00DBA0AE /* Sources */,
 				1EB9EEC4204FDE1A00DBA0AE /* Frameworks */,
 				1EB9EEC5204FDE1A00DBA0AE /* Resources */,
-				3B5BC8CC8BC7BD308E7FD0AD /* [CP] Embed Pods Frameworks */,
-				8635ED557E4EE307EA07E5F4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -344,105 +307,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		2B59B78AFF9CB32F60A9F52B /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HenriPotierApiClient/Pods-HenriPotierApiClient-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		3B5BC8CC8BC7BD308E7FD0AD /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-HenriPotierApiClientTests/Pods-HenriPotierApiClientTests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
-				"${BUILT_PRODUCTS_DIR}/OHHTTPStubs/OHHTTPStubs.framework",
-				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
-				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
-				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OHHTTPStubs.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HenriPotierApiClientTests/Pods-HenriPotierApiClientTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7459EF3F5545AC85C7F648C4 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-HenriPotierApiClientTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8635ED557E4EE307EA07E5F4 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HenriPotierApiClientTests/Pods-HenriPotierApiClientTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9B3B1BC491D6BCECFA100094 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-HenriPotierApiClient-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1EB9EEB9204FDE1A00DBA0AE /* Sources */ = {
@@ -598,7 +462,6 @@
 		};
 		1EB9EED3204FDE1A00DBA0AE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AA07E5C6052FDADE75E9DCBA /* Pods-HenriPotierApiClient.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -622,7 +485,6 @@
 		};
 		1EB9EED4204FDE1A00DBA0AE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8A2915AC10FB5EE13D05D9A4 /* Pods-HenriPotierApiClient.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -645,7 +507,6 @@
 		};
 		1EB9EED6204FDE1A00DBA0AE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 604F4671E61FC302843EFAD7 /* Pods-HenriPotierApiClientTests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 89Q8W4SDG5;
@@ -660,7 +521,6 @@
 		};
 		1EB9EED7204FDE1A00DBA0AE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B72DC33B31C3776E6DC34C8A /* Pods-HenriPotierApiClientTests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 89Q8W4SDG5;
