@@ -7,27 +7,28 @@
 //
 
 import Foundation
-import ObjectMapper
 
-/// Represents an offer API model.
-struct HPApiOffer: ImmutableMappable {
+/// Represents an Henri Potier offer.
+public struct HPApiOffer {
     
-    let type: Offer.OfferType
-    let value: Int
-    let sliceValue: Int?
-    
-    init(map: Map) throws {
-        type = try map.value("type", using: EnumTransform<Offer.OfferType>())
-        value = try map.value("value")
-        sliceValue = try? map.value("sliceValue")
+    /// Represents an offer type
+    ///
+    /// - percentage: type of the offer is percentage.
+    /// - minus: type of the offer is minus.
+    /// - slice: slice value.
+    public enum OfferType: String {
+        
+        case percentage = "percentage"
+        case minus = "minus"
+        case slice = "slice"
     }
-}
-
-extension HPApiOffer: Modelable {
     
-    typealias Model = Offer
+    /// Type of the offer.
+    public let type: OfferType
     
-    var model: Offer {
-        return Offer(type: type, value: value, sliceValue: sliceValue)
-    }
+    /// value of the offer.
+    public let value: Int
+    
+    /// slice value.
+    public let sliceValue: Int?
 }

@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import RxSwift
 import AlamofireObjectMapper
 
 /// Class for managing Henri Potier Api calls.
@@ -31,50 +32,55 @@ public class HenriPotierApiClient {
 
 public extension HenriPotierApiClient {
     
-    /// Get list of books.
+    /// Get books.
     ///
-    /// - Parameters:
-    ///   - queue: queue on which completion will be called when the task is finished.
-    ///   - completion: closure called when task is finished.
-    /// - Returns: URLSessionTask.
-    @discardableResult public func books(queue: DispatchQueue = DispatchQueue.main , completion: @escaping (Result<[Book]>) -> Void) -> URLSessionTask? {
-        let dataRequest = sessionManager.request(ApiRouter.books(baseURL))
-            .validate()
-            .validate(contentType: ["application/json"])
-            .responseArray(completionHandler: { (response:DataResponse<[HPApiBook]>) in
-                
-                switch response.result {
-                case .success(let apiBooks):
-                    queue.async { completion(.success( apiBooks.map({ $0.model }) )) }
-                case .failure(let error):
-                    queue.async { completion(.failure(error.apiError)) }
-                }
-            })
-        
-        return dataRequest.task
+    /// - Returns: Observable<[HPApiBook]>.
+    
+    @discardableResult public func books() -> Observable<[HPApiBook]> {
+        return Observable.create({ observer -> Disposable in
+            let dataTask = self.sessionManager.request(ApiRouter.books(self.baseURL))
+                .validate()
+                .validate(contentType: ["application/json"])
+                .responseArray(completionHandler: { (response:DataResponse<[Book]>) in
+                    switch response.result {
+                    case .success(let apiBooks):
+                        observer.onNext(apiBooks.map({ $0.model }))
+                        observer.onCompleted()
+                    case .failure(let error):
+                        observer.onError(error.apiError)
+                    }
+                })
+            
+            return Disposables.create {
+                dataTask.cancel()
+            }
+        })
     }
     
     /// Get offers for list of books (represented by their ISBNs).
     ///
     /// - Parameters:
     ///   - ISBNs: ISBNs of the books.
-    ///   - queue: queue on which completion will be called when the task is finished.
-    ///   - completion: closure called when task is finished.
-    /// - Returns: URLSessionTask.
-    @discardableResult public func offers(ISBNs: [String], queue: DispatchQueue = DispatchQueue.main , completion: @escaping (Result<[Offer]>) -> Void) -> URLSessionTask? {
-        let dataRequest = sessionManager.request(ApiRouter.offers(ISBNs, baseURL))
-            .validate()
-            .validate(contentType: ["application/json"])
-            .responseArray(keyPath:"offers", completionHandler: { (response:DataResponse<[HPApiOffer]>) in
-                
-                switch response.result {
-                case .success(let apiBooks):
-                    queue.async { completion(.success( apiBooks.map({ $0.model }) )) }
-                case .failure(let error):
-                    queue.async { completion(.failure(error.apiError)) }
-                }
-            })
-        
-        return dataRequest.task
+    /// - Returns: Observable<[HPApiOffer]>.
+    
+    @discardableResult public func offers(ISBNs: [String]) -> Observable<[HPApiOffer]> {
+        return Observable.create({ observer -> Disposable in
+            let dataTask = self.sessionManager.request(ApiRouter.offers(ISBNs, self.baseURL))
+                .validate()
+                .validate(contentType: ["application/json"])
+                .responseArray(keyPath:"offers", completionHandler: { (response:DataResponse<[Offer]>) in
+                    switch response.result {
+                    case .success(let offers):
+                        observer.onNext(offers.map({ $0.model }))
+                        observer.onCompleted()
+                    case .failure(let error):
+                        observer.onError(error.apiError)
+                    }
+                })
+            
+            return Disposables.create {
+                dataTask.cancel()
+            }
+        })
     }
 }

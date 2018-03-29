@@ -7,22 +7,42 @@
 //
 
 import Foundation
+import ObjectMapper
 
-/// Represents a book model.
-public struct Book {
+/// Api book model.
+struct Book: Mappable {
     
     ///ISBN of the book.
-    public let isbn: String
+    var isbn: String = ""
     
     /// Title of the book.
-    public let title: String
+    var title: String = ""
     
     /// Price of the book.
-    public let price: Int
+    var price: Int = 0
     
     /// Book's cover URL.
-    public let cover: String
+    var cover: String = ""
     
     /// Synopsis of the book.
-    public let synopsis: [String]
+    var synopsis: [String] = []
+    
+    init?(map: Map) {}
+    
+    mutating func mapping(map: Map) {
+        isbn <- map["isbn"]
+        title <- map["title"]
+        price <- map["price"]
+        cover <- map["cover"]
+        synopsis <- map["synopsis"]
+    }
+}
+
+extension Book: Modelable {
+    
+    typealias Model = HPApiBook
+    
+    var model: HPApiBook {
+        return HPApiBook(isbn: isbn, title: title, price: price, cover: cover, synopsis: synopsis)
+    }
 }

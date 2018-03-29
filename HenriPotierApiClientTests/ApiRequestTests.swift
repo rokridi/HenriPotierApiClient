@@ -11,6 +11,7 @@ import Quick
 import Nimble
 import ObjectMapper
 import OHHTTPStubs
+import RxSwift
 
 @testable import HenriPotierApiClient
 
@@ -19,9 +20,16 @@ class ApiRequestTests: QuickSpec {
     override func spec() {
         
         var apiClient: HenriPotierApiClient!
+        var disposeBag: DisposeBag!
         
         beforeEach {
             apiClient = HenriPotierApiClient(baseURL: "http://domain.com")
+            disposeBag = DisposeBag()
+        }
+        
+        afterEach {
+            disposeBag = nil
+            OHHTTPStubs.removeAllStubs()
         }
         
         describe("Fetch books") {
@@ -40,19 +48,10 @@ class ApiRequestTests: QuickSpec {
                     
                     waitUntil(action: { done in
                         
-                        apiClient.books() { result  in
-                            
-                            expect(result.isSuccess).to(beTrue())
-                            let books = result.value
-                            expect(books).toNot(beNil())
-                            expect(books?.count).to(equal(7))
-                            
-                            if let book = books?.first {
-                                expect(book.isbn).to(equal("c8fabf68-8374-48fe-a7ea-a00ccd07afff"))
-                                expect(book.price).to(equal(35))
-                            }
+                        apiClient.books().subscribe(onNext: { books in
+                            expect(books.count).to(equal(7))
                             done()
-                        }
+                        }).disposed(by: disposeBag)
                     })
                 })
                 
@@ -71,20 +70,14 @@ class ApiRequestTests: QuickSpec {
                         
                         waitUntil(action: { done in
                             
-                            apiClient.books() { result  in
-                                
-                                expect(result.isFailure).to(beTrue())
-                                let books = result.value
-                                expect(books).to(beNil())
-
-                                if case let ApiError.jsonMappingFailed(error: error) = result.error! {
+                            apiClient.books().subscribe(onError: { error in
+                                if case let ApiError.jsonMappingFailed(error: error) = error {
                                     expect(error).toNot(beNil())
                                 } else {
                                     fail("Error should be jsonMappingFailed.")
                                 }
-                                
                                 done()
-                            }
+                            }).disposed(by: disposeBag)
                         })
                     })
                 })
@@ -104,20 +97,14 @@ class ApiRequestTests: QuickSpec {
                         
                         waitUntil(action: { done in
                             
-                            apiClient.books() { result  in
-                                
-                                expect(result.isFailure).to(beTrue())
-                                let books = result.value
-                                expect(books).to(beNil())
-                                
-                                if case let ApiError.responseValidationFailed(reason: .unacceptableStatusCode(code: code)) = result.error! {
+                            apiClient.books().subscribe(onError: { error in
+                                if case let ApiError.responseValidationFailed(reason: .unacceptableStatusCode(code: code)) = error {
                                     expect(code).to(equal(400))
                                 } else {
                                     fail("Error should be responseValidationFailed with reason unacceptableStatusCode code 400.")
                                 }
-                                
                                 done()
-                            }
+                            }).disposed(by: disposeBag)
                         })
                     })
                 })
@@ -135,29 +122,19 @@ class ApiRequestTests: QuickSpec {
                         }
                         
                         waitUntil(action: { done in
-                            
-                            apiClient.books() { result  in
-                                
-                                expect(result.isFailure).to(beTrue())
-                                let books = result.value
-                                expect(books).to(beNil())
-                                
-                                if case let ApiError.responseValidationFailed(reason: .unacceptableContentType(acceptableContentTypes: _, responseContentType: received)) = result.error! {
+                            apiClient.books().subscribe(onError: { error in
+                                if case let ApiError.responseValidationFailed(reason: .unacceptableContentType(acceptableContentTypes: _, responseContentType: received)) = error {
                                     expect(received).to(equal("application/xml"))
                                 } else {
-                                    fail("Error should be responseValidationFailed with reason unacceptableStatusCode code 400.")
+                                    fail("Error should be responseValidationFailed with reason unacceptableContentType.")
                                 }
-                                
                                 done()
-                            }
+                            }).disposed(by: disposeBag)
                         })
                     })
                 })
             })
         }
-        
-        
-        
         
         describe("Fetch offers") {
             
@@ -175,28 +152,23 @@ class ApiRequestTests: QuickSpec {
                     
                     waitUntil(action: { done in
                         
-                        apiClient.offers(ISBNs: ["c8fabf68-8374-48fe-a7ea-a00ccd07afff", "a460afed-e5e7-4e39-a39d-c885c05db861"]) { result  in
-                            
-                            expect(result.isSuccess).to(beTrue())
-                            let offers = result.value
-                            expect(offers).toNot(beNil())
-                            expect(offers?.count).to(equal(3))
-                            
-                            if let offers = offers, offers.count == 3 {
-                                expect(offers.first!.type).to(equal(Offer.OfferType.percentage))
+                        apiClient.offers(ISBNs: ["c8fabf68-8374-48fe-a7ea-a00ccd07afff", "a460afed-e5e7-4e39-a39d-c885c05db861"]).subscribe(onNext: {offers in
+                            expect(offers.count).to(equal(3))
+                            if offers.count == 3 {
+                                expect(offers.first!.type).to(equal(HPApiOffer.OfferType.percentage))
                                 expect(offers.first!.value).to(equal(4))
                                 expect(offers.first!.sliceValue).to(beNil())
                                 
-                                expect(offers[1].type).to(equal(Offer.OfferType.minus))
+                                expect(offers[1].type).to(equal(HPApiOffer.OfferType.minus))
                                 expect(offers[1].value).to(equal(15))
                                 expect(offers[1].sliceValue).to(beNil())
                                 
-                                expect(offers.last!.type).to(equal(Offer.OfferType.slice))
+                                expect(offers.last!.type).to(equal(HPApiOffer.OfferType.slice))
                                 expect(offers.last!.value).to(equal(12))
                                 expect(offers.last!.sliceValue).to(equal(100))
                             }
                             done()
-                        }
+                        }).disposed(by: disposeBag)
                     })
                 })
                 
@@ -214,21 +186,15 @@ class ApiRequestTests: QuickSpec {
                         }
                         
                         waitUntil(action: { done in
-                            
-                            apiClient.offers(ISBNs: ["c8fabf68-8374-48fe-a7ea-a00ccd07afff", "a460afed-e5e7-4e39-a39d-c885c05db861"]) { result  in
-                                
-                                expect(result.isFailure).to(beTrue())
-                                let offers = result.value
-                                expect(offers).to(beNil())
-                                
-                                if case let ApiError.jsonMappingFailed(error: error) = result.error! {
+                            apiClient.offers(ISBNs: ["c8fabf68-8374-48fe-a7ea-a00ccd07afff", "a460afed-e5e7-4e39-a39d-c885c05db861"]).subscribe(onError: { error in
+                                if case let ApiError.jsonMappingFailed(error: error) = error {
                                     expect(error).toNot(beNil())
                                 } else {
                                     fail("Error should be jsonMappingFailed.")
                                 }
                                 
                                 done()
-                            }
+                            }).disposed(by: disposeBag)
                         })
                     })
                 })
@@ -247,59 +213,46 @@ class ApiRequestTests: QuickSpec {
                         }
                         
                         waitUntil(action: { done in
-                            
-                            apiClient.offers(ISBNs: ["c8fabf68-8374-48fe-a7ea-a00ccd07afff", "a460afed-e5e7-4e39-a39d-c885c05db861"]) { result  in
-                                
-                                expect(result.isFailure).to(beTrue())
-                                let offers = result.value
-                                expect(offers).to(beNil())
-                                
-                                if case let ApiError.responseValidationFailed(reason: .unacceptableStatusCode(code: code)) = result.error! {
+                            apiClient.offers(ISBNs: ["c8fabf68-8374-48fe-a7ea-a00ccd07afff", "a460afed-e5e7-4e39-a39d-c885c05db861"]).subscribe(onError: { error in
+                                if case let ApiError.responseValidationFailed(reason: .unacceptableStatusCode(code: code)) = error {
                                     expect(code).to(equal(400))
                                 } else {
                                     fail("Error should be responseValidationFailed with reason unacceptableStatusCode code 400.")
                                 }
                                 
                                 done()
-                            }
+                            }).disposed(by: disposeBag)
                         })
                     })
-                })
-                
-                context("when received content type is invalid.", {
-                    it("should return a responseValidationFailed error with reason unacceptableContentType with responseContentType: application/xml.", closure: {
-                        
-                        stub(condition: isHost("domain.com")) { request in
+                    
+                    context("when received content type is invalid.", {
+                        it("should return a responseValidationFailed error with reason unacceptableContentType with responseContentType: application/xml.", closure: {
                             
-                            return OHHTTPStubsResponse(
-                                fileAtPath: OHPathForFile("offers.json", type(of: self))!,
-                                statusCode: 200,
-                                headers: ["Content-Type":"application/xml"]
-                            )
-                        }
-                        
-                        waitUntil(action: { done in
-                            
-                            apiClient.offers(ISBNs: ["c8fabf68-8374-48fe-a7ea-a00ccd07afff", "a460afed-e5e7-4e39-a39d-c885c05db861"]) { result  in
+                            stub(condition: isHost("domain.com")) { request in
                                 
-                                expect(result.isFailure).to(beTrue())
-                                let offers = result.value
-                                expect(offers).to(beNil())
-                                
-                                if case let ApiError.responseValidationFailed(reason: .unacceptableContentType(acceptableContentTypes: _, responseContentType: received)) = result.error! {
-                                    expect(received).to(equal("application/xml"))
-                                } else {
-                                    fail("Error should be unacceptableContentType with received content type application/xml.")
-                                }
-                                done()
+                                return OHHTTPStubsResponse(
+                                    fileAtPath: OHPathForFile("offers.json", type(of: self))!,
+                                    statusCode: 200,
+                                    headers: ["Content-Type":"application/xml"]
+                                )
                             }
+                            
+                            waitUntil(action: { done in
+                                apiClient.offers(ISBNs: ["c8fabf68-8374-48fe-a7ea-a00ccd07afff", "a460afed-e5e7-4e39-a39d-c885c05db861"]).subscribe(onError: { error in
+                                    if case let ApiError.responseValidationFailed(reason: .unacceptableContentType(acceptableContentTypes: _, responseContentType: received)) = error {
+                                        expect(received).to(equal("application/xml"))
+                                    } else {
+                                        fail("Error should be unacceptableContentType with received content type application/xml.")
+                                    }
+                                    
+                                    done()
+                                }).disposed(by: disposeBag)
+                            })
                         })
                     })
                 })
             })
         }
-        
-        
     }
 }
 
