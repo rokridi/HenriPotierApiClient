@@ -10,16 +10,18 @@ import Foundation
 import ObjectMapper
 
 /// Represents an offer API model.
-struct Offer: ImmutableMappable {
+struct Offer: Mappable {
     
-    let type: HPApiOffer.OfferType
-    let value: Int
-    let sliceValue: Int?
+    var type: HPApiOffer.OfferType = .percentage
+    var value: Int = 0
+    var sliceValue: Int?
     
-    init(map: Map) throws {
-        type = try map.value("type", using: EnumTransform<HPApiOffer.OfferType>())
-        value = try map.value("value")
-        sliceValue = try? map.value("sliceValue")
+    init?(map: Map) {}
+    
+    mutating func mapping(map: Map) {
+        type <- (map["type"],EnumTransform<HPApiOffer.OfferType>())
+        value <- map["value"]
+        sliceValue <- map["sliceValue"]
     }
 }
 
