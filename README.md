@@ -43,13 +43,17 @@ $ pod install
 
 ```
 let client = HenriPotierApiClient(configuration: URLSessionConfiguration.default, baseURL: "http://www.domain.com")
-        
-client.books() { result  in
-  switch result {
-    case .success(let books):
-    case .failure(let error):
-  }
-}
+
+apiClient.books().subscribe(onNext: { books in
+			//Handle success
+		}, onError: { error in
+			//Handle error
+		}, onCompleted: {
+			//Handle completion
+		}, onDisposed: {
+			//Handle disposal
+})      
+
 ```
 
 ### Get offers for books ISBNs.
@@ -57,11 +61,15 @@ client.books() { result  in
 ```
 let client = HenriPotierApiClient(configuration: URLSessionConfiguration.default, baseURL: "http://www.domain.com")
         
-apiClient.offers(ISBNs: ["c8fabf68-8374-48fe-a7ea-a00ccd07afff", "a460afed-e5e7-4e39-a39d-c885c05db861"]) { result  in
-  switch result {
-    case .success(let offers):
-    case .failure(let error):
-  }
-}                    
+apiClient.offers(ISBNs: ["c8fabf68-8374-48fe-a7ea-a00ccd07afff", "a460afed-e5e7-4e39-a39d-c885c05db861"])
+		.subscribe(onNext: { offers in
+			//Handle success
+		}, onError: { error in
+			//Handle error
+		}, onCompleted: {
+			//Handle completion
+		}, onDisposed: {
+			//Handle disposal
+})                  
 ```
 
