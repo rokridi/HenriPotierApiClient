@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "HenriPotierApiClient"
-  s.version      = "1.0.0"
+  s.version      = "1.1.0"
   s.summary      = "A HTTP client for consuming Henri Potier API."
 
   # This description is used to generate tags and improve search results.
@@ -89,7 +89,6 @@ Pod::Spec.new do |s|
 
   s.requires_arc = true
 
-  s.dependency "Alamofire", "~> 4.7"
   s.dependency "AlamofireObjectMapper", "~> 5.0"
   s.dependency "RxSwift", "~> 4.0"
 
