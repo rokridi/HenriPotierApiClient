@@ -7,10 +7,9 @@ target 'HenriPotierApiClient' do
 
   # Pods for HenriPotierApiClient
 
-  pod 'Alamofire', '~> 4.7'
   pod 'AlamofireObjectMapper', '~> 5.0'
   pod 'RxSwift',    '~> 4.0'
-
+  
   target 'HenriPotierApiClientTests' do
     inherit! :search_paths
     # Pods for testing

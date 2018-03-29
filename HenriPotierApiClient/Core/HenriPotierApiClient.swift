@@ -35,6 +35,7 @@ public extension HenriPotierApiClient {
     /// Get books.
     ///
     /// - Returns: Observable<[HPApiBook]>.
+    
     @discardableResult public func books() -> Observable<[HPApiBook]> {
         return Observable.create({ observer -> Disposable in
             let dataTask = self.sessionManager.request(ApiRouter.books(self.baseURL))
@@ -61,6 +62,7 @@ public extension HenriPotierApiClient {
     /// - Parameters:
     ///   - ISBNs: ISBNs of the books.
     /// - Returns: Observable<[HPApiOffer]>.
+    
     @discardableResult public func offers(ISBNs: [String]) -> Observable<[HPApiOffer]> {
         return Observable.create({ observer -> Disposable in
             let dataTask = self.sessionManager.request(ApiRouter.offers(ISBNs, self.baseURL))

@@ -24,23 +24,23 @@ class ModelsTests: QuickSpec {
                 it("should be a valid Book", closure: {
                     let mapper = Mapper<Book>()
                     let json = Helpers.JSONFromFile("book")
-                    let apiBook = try? mapper.map(JSONObject: json as Any)
+                    let apiBook = mapper.map(JSONObject: json as Any)
                     
                     expect(apiBook).toNot(beNil())
                     
-                    if apiBook != nil {
-                        expect(apiBook!.isbn).to(equal("cef179f2-7cbc-41d6-94ca-ecd23d9f7fd6"))
-                        expect(apiBook!.title).to(equal("Henri Potier et le Prince de sang-mêlé"))
-                        expect(apiBook!.price).to(equal(30))
-                        expect(apiBook!.cover).to(equal("http://henri-potier.xebia.fr/hp5.jpg"))
+                    if let apiBook = apiBook {
+                        expect(apiBook.isbn).to(equal("cef179f2-7cbc-41d6-94ca-ecd23d9f7fd6"))
+                        expect(apiBook.title).to(equal("Henri Potier et le Prince de sang-mêlé"))
+                        expect(apiBook.price).to(equal(30))
+                        expect(apiBook.cover).to(equal("http://henri-potier.xebia.fr/hp5.jpg"))
                         
                         let synopsis = [
                             "Henri rentre en sixième année à l'école de sorcellerie Poudlard. Il entre alors en possession d'un livre de potion portant le mot « propriété du Prince de sang-mêlé » et commence à en savoir plus sur le sombre passé de Voldemort qui était encore connu sous le nom de Tom Jedusor."
                         ]
                         
-                        expect(apiBook!.synopsis).to(equal(synopsis))
+                        expect(apiBook.synopsis).to(equal(synopsis))
                         
-                        let book = apiBook!.model
+                        let book = apiBook.model
                         expect(book.isbn).to(equal("cef179f2-7cbc-41d6-94ca-ecd23d9f7fd6"))
                         expect(book.title).to(equal("Henri Potier et le Prince de sang-mêlé"))
                         expect(book.price).to(equal(30))
@@ -53,7 +53,7 @@ class ModelsTests: QuickSpec {
                 it("should be a non valid Book", closure: {
                     let mapper = Mapper<Book>()
                     let json = Helpers.JSONFromFile("invalid_book")
-                    let book = try? mapper.map(JSONObject: json as Any)
+                    let book = mapper.map(JSONObject: json as Any)
                     
                     expect(book).to(beNil())
                 })
@@ -84,7 +84,7 @@ class ModelsTests: QuickSpec {
                     let mapper = Mapper<Offer>()
                     let json = Helpers.JSONFromFile("percentage_offer")
                     
-                    let apiOffer = try? mapper.map(JSONObject: json as Any)
+                    let apiOffer = mapper.map(JSONObject: json as Any)
                     
                     expect(apiOffer).toNot(beNil())
                     
@@ -103,7 +103,7 @@ class ModelsTests: QuickSpec {
                 it("should be a minus offer", closure: {
                     let mapper = Mapper<Offer>()
                     let json = Helpers.JSONFromFile("minus_offer")
-                    let apiOffer = try? mapper.map(JSONObject: json as Any)
+                    let apiOffer = mapper.map(JSONObject: json as Any)
                     
                     expect(apiOffer).toNot(beNil())
                     
@@ -122,7 +122,7 @@ class ModelsTests: QuickSpec {
                 it("should be a slice offer", closure: {
                     let mapper = Mapper<Offer>()
                     let json = Helpers.JSONFromFile("slice_offer")
-                    let apiOffer = try? mapper.map(JSONObject: json as Any)
+                    let apiOffer = mapper.map(JSONObject: json as Any)
                     
                     expect(apiOffer).toNot(beNil())
                     
@@ -143,7 +143,7 @@ class ModelsTests: QuickSpec {
                 it("should be a non valid HPApiOffer", closure: {
                     let mapper = Mapper<Offer>()
                     let json = Helpers.JSONFromFile("invalid_offer")
-                    let apiOffer = try? mapper.map(JSONObject: json as Any)
+                    let apiOffer = mapper.map(JSONObject: json as Any)
                     
                     expect(apiOffer).to(beNil())
                 })

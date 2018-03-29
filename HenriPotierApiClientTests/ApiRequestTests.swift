@@ -29,6 +29,7 @@ class ApiRequestTests: QuickSpec {
         
         afterEach {
             disposeBag = nil
+            OHHTTPStubs.removeAllStubs()
         }
         
         describe("Fetch books") {

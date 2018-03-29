@@ -10,29 +10,31 @@ import Foundation
 import ObjectMapper
 
 /// Api book model.
-struct Book: ImmutableMappable {
+struct Book: Mappable {
     
     ///ISBN of the book.
-    let isbn: String
+    var isbn: String = ""
     
     /// Title of the book.
-    let title: String
+    var title: String = ""
     
     /// Price of the book.
-    let price: Int
+    var price: Int = 0
     
     /// Book's cover URL.
-    let cover: String
+    var cover: String = ""
     
     /// Synopsis of the book.
-    let synopsis: [String]
+    var synopsis: [String] = []
     
-    init(map: Map) throws {
-        isbn = try map.value("isbn")
-        title = try map.value("title")
-        price = try map.value("price")
-        cover = try map.value("cover")
-        synopsis = try map.value("synopsis")
+    init?(map: Map) {}
+    
+    mutating func mapping(map: Map) {
+        isbn <- map["isbn"]
+        title <- map["title"]
+        price <- map["price"]
+        cover <- map["cover"]
+        synopsis <- map["synopsis"]
     }
 }
 
