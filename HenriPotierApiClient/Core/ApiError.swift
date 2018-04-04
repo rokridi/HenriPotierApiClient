@@ -65,7 +65,7 @@ public enum ApiError {
         case unknownReason
     }
     
-    case unknownError
+    case unknownError(error: Error)
     case invalidURL(url: URL?)
     case jsonMappingFailed(error: Error)
     case parameterEncodingFailed(reason: ParameterEncodingFailureReason)
@@ -206,8 +206,8 @@ extension ApiError: LocalizedError {
             return reason.localizedDescription
         case .responseSerializationFailed(let reason):
             return reason.localizedDescription
-        case .unknownError:
-            return "Unknown error"
+        case .unknownError(let error):
+            return "Unknown error \(error.localizedDescription)"
         }
     }
 }
@@ -268,3 +268,4 @@ extension ApiError.ResponseValidationFailureReason {
         }
     }
 }
+
