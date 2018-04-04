@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "HenriPotierApiClient"
-  s.version      = "1.1.0"
+  s.version      = "1.1.1"
   s.summary      = "A HTTP client for consuming Henri Potier API."
 
   # This description is used to generate tags and improve search results.

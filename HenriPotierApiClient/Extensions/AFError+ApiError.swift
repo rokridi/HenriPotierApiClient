@@ -65,9 +65,10 @@ private extension AFError.ResponseValidationFailureReason {
 extension Error {
     
     var apiError: ApiError {
+        let error = self as NSError
         
-        if let error = self as? AFError  {
-            switch error {
+        if error.domain == "Alamofire.AFError" {
+            switch self as! AFError {
             case .invalidURL(url: let urlConvertible):
                 return .invalidURL(url: try? urlConvertible.asURL())
             case .parameterEncodingFailed(reason: let reason):
@@ -77,11 +78,12 @@ extension Error {
             case .responseSerializationFailed(reason: let reason):
                 return .responseSerializationFailed(reason: reason.asResponseSerializationFailureReason())
             default:
-                return ApiError.unknownError
+                return ApiError.unknownError(error: self)
             }
-        } else {
+        } else if error.domain == "com.alamofireobjectmapper.error" {
             return ApiError.jsonMappingFailed(error: self)
+        } else {
+            return ApiError.unknownError(error: self)
         }
-        
     }
 }
